@@ -66,7 +66,7 @@ except:
    print "Usage: client.py <username> <password> <api_key>"
    sys.exit()
 
-conf = dict(username=username, password=password, api_key=api_key, baseurl='http://integrations.mydesktop.com.au/api/v1.0')
+conf = dict(username=username, password=password, api_key=api_key, baseurl='https://integrations.mydesktop.com.au/api/v1.0')
 
 token,refresh_token = get_new_token(conf)
 
