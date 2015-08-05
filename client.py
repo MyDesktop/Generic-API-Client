@@ -11,7 +11,7 @@ def get_new_token(conf):
 
     payload = {'api_key':conf['api_key']}
 
-    r = requests.get(tokenurl, params=payload, headers=headers, auth=(conf['username'], conf['password']))
+    r = requests.get(tokenurl, params=payload, headers=headers, auth=(conf['refresh_token'], ''))
 
     status = r.status_code
 
@@ -22,6 +22,7 @@ def get_new_token(conf):
         print "401 Unauthorized"
         return None,None
 
+    print r.text
     json = r.json()
 
     token = json['token']
@@ -59,14 +60,13 @@ def get_contacts(conf):
 #------------------------------------------------------------
 
 try:
-   username = sys.argv[1]
-   password = sys.argv[2]
-   api_key = sys.argv[3]
+   api_key = sys.argv[1]
+   refresh_token = sys.argv[2]
 except:
-   print "Usage: client.py <username> <password> <api_key>"
+   print "Usage: client.py <api_key> <refresh_token>"
    sys.exit()
 
-conf = dict(username=username, password=password, api_key=api_key, baseurl='https://integrations.mydesktop.com.au/api/v1.0')
+conf = dict(refresh_token=refresh_token, api_key=api_key, baseurl='https://integrations.mydesktop.com.au/api/v1.0')
 
 token,refresh_token = get_new_token(conf)
 
@@ -78,4 +78,3 @@ conf['token']=token
 conf['refresh_token']=refresh_token
 
 get_contacts(conf)
-
