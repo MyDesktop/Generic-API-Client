@@ -18,4 +18,4 @@ Once you have the *Refresh Token*, you'll need to obtain an *Access Token*. To d
 
 Now, you can use the *Access Token* to access the user's data. For example, you would call the `/contacts` endpoint, using the *Access Token* as the HTTP Basic Authentication username.
 
-When the *Access Token* expires, simply call `/token` to get another one. We recommend building logic in to your application so that it can detect a 401 error and get a new token automatically.
+When the *Access Token* expires, simply call `/token` to get another one. We recommend building logic in to your application so that it can detect a 401 error and get a new *Access Token* automatically.
