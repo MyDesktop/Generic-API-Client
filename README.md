@@ -17,3 +17,26 @@ The MyDesktop user will also need to allow you API access to their MyDesktop dat
 Now, you can use the *Access Token* to access the user's data. For example, you would call the `/contacts` endpoint, using the *Access Token* as the HTTP Basic Authentication username.
 
 We recommend building logic in to your application to handle a 401 error.
+
+Date/Time Format
+==================
+
+Generally, the API returns the following format for Date objects:
+
+`YYYY-MM-DD`
+
+e.g. `2016-04-28`
+
+and the following format for DateTime objects:
+
+`YYYY-MM-DDThh:mm:ss`
+
+e.g. `2016-04-28T14:49:05`
+
+When sending date/datetime data to the API, you have the option to submit in these formats:
+
+Date: `YYYY-MM-DD`
+
+DateTime: `YYYY-MM-DDThh:mm:ss`, `YYYY-MM-DD hh:mm:ss`
+
+Please note that all times are 24-hour.
