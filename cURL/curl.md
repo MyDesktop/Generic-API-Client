@@ -27,7 +27,7 @@ curl -X GET 'https://integrations.mydesktop.com.au/api/v1.1/contacts?api_key=<YO
 curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts?api_key=<YOUR_API_KEY_HERE>' \
     -u '<YOUR_ACCESS_TOKEN>':'' \
     -H "Content-Type: application/json" \
-    -d '{"firstname":"Matt","lastname":"Healy","categories:[{"id": 2}]}'
+    -d '{"firstname":"Matt","lastname":"Healy","categories":[{"id": 2}]}'
 ```
 
 ## Update an existing contact to add a mobile phone number:
