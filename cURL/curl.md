@@ -39,6 +39,24 @@ curl -X PUT 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>
     -d '{"mobile":"0400000000"}'
 ```
 
+## Add a Buy/Rent Requirement to the contact:
+
+```
+curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>/buyrent?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':'' \
+    -H "Content-Type: application/json" \
+    -d '{"requirement":{"fromprice":200000,"toprice":400000,"residential":{"carspaces":0,"bathrooms":1,"bedrooms":3,"propertytype":{"id":1}}}}'
+```
+
+## Create a Property Alert for that Buy/Rent Requirement:
+
+```
+curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/propertyalerts?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':'' \
+    -H "Content-Type: application/json" \
+    -d '{"contact":{"id":<CONTACTID>},"requirement":{"id":<REQUIREMENTID>},"sender":{"id":<AGENTID>},"name":"My First Property Alert","pricechanges":true,"insertdate":"2016-09-19 09:00:00","subject":"Your Property Alert","sendingpattern":{"frequency":"Daily","day":"Every"}}'
+```
+
 ## Delete an existing contact:
 
 ```
