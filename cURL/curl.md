@@ -57,6 +57,15 @@ curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/propertyalerts?api_
     -d '{"contact":{"id":<CONTACTID>},"requirement":{"id":<REQUIREMENTID>},"sender":{"id":<AGENTID>},"name":"My First Property Alert","pricechanges":true,"insertdate":"2016-09-19 09:00:00","subject":"Your Property Alert","sendingpattern":{"frequency":"Daily","day":"Every"}}'
 ```
 
+## Add a Contact Note linked to the Property
+###### Note: To link the Contact Note to the Property use the Note Classification ID 26 "Email Feedback" or ID 4 "Home Open/Inspection Feedback (listings)"
+```
+curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>/notes?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':'' \
+    -H "Content-Type: application/json" \
+    -d '{{"property":{"id":<PROPERTYID>},"note":"Loves the kitchen size","classification":{"id":26},"inspectiondate":"2016-08-22 10:11:12"}'
+```
+
 ## Delete an existing contact:
 
 ```
