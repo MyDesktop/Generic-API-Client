@@ -39,6 +39,36 @@ curl -X PUT 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>
     -d '{"mobile":"0400000000"}'
 ```
 
+## Update an existing contact to unsubscribe them from SMS messages
+
+First, get the valid values for unsubscribe options:
+
+```
+curl -X GET 'https://integrations.mydesktop.com.au/api/v1.1/unsubscribetypes?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':''
+```
+
+Then, get the contact's existing unsubscribe options:
+
+```
+curl -X GET 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':''
+
+<snip>
+    "unsubscribeoptions": [{"id": 5}]
+</snip>
+
+```
+
+Now update the contact's unsubscribe options, including the option for SMS (4)
+
+```
+curl -X PUT 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':'' \
+    -H "Content-Type: application/json" \
+    -d '{"unsubscribeoptions": [{"id": 5},{"id": 4}]}'
+```
+
 ## Add a Buy/Rent Requirement to the contact:
 
 ```
