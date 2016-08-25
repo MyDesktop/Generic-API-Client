@@ -75,7 +75,7 @@ curl -X PUT 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>
 curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>/buyrent?api_key=<YOUR_API_KEY_HERE>' \
     -u '<YOUR_ACCESS_TOKEN>':'' \
     -H "Content-Type: application/json" \
-    -d '{"requirement":{"fromprice":200000,"toprice":400000,"residential":{"carspaces":0,"bathrooms":1,"bedrooms":3,"propertytype":{"id":1}}}}'
+    -d '{"fromprice":200000,"toprice":400000,"residential":{"carspaces":0,"bathrooms":1,"bedrooms":3,"propertytype":{"id":1}}}'
 ```
 
 ## Create a Property Alert for that Buy/Rent Requirement:
