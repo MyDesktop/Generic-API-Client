@@ -69,13 +69,23 @@ curl -X PUT 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>
     -d '{"unsubscribeoptions": [{"id": 5},{"id": 4}]}'
 ```
 
-## Add a Buy/Rent Requirement to the contact:
+## Add a Residential Buy/Rent Requirement to the contact:
 
 ```
 curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>/buyrent?api_key=<YOUR_API_KEY_HERE>' \
     -u '<YOUR_ACCESS_TOKEN>':'' \
     -H "Content-Type: application/json" \
     -d '{"requirement":{"fromprice":200000,"toprice":400000,"residential":{"carspaces":0,"bathrooms":1,"bedrooms":3,"propertytype":{"id":1}}}}'
+```
+
+## Add a Commercial Buy/Rent Requirement to the contact:
+###### Note: "type" value defaults to residential when not included, otherwise it accepts "commercial", "business", "rural", "livestock", "clearing sale"
+
+```
+curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>/buyrent?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':'' \
+    -H "Content-Type: application/json" \
+    -d '{"type":"commercial","fromprice":1000000,"toprice":1500000,"commercial":{"fromland":1000,"toland":5000,"frombuild":2000,"propertytype":{"id":3}}}'
 ```
 
 ## Create a Property Alert for that Buy/Rent Requirement:
