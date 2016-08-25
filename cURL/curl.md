@@ -79,7 +79,7 @@ curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID
 ```
 
 ## Add a Commercial Buy/Rent Requirement to the contact:
-###### Note: "type" value defaults to residential when not included, otherwise it accepts "commercial", "business", "rural", "livestock", "clearing sale"
+###### Note: "type" value accepts (default) "residential", "commercial", "business", "rural", "livestock", "clearing sale"
 
 ```
 curl -X POST 'https://integrations.mydesktop.com.au/api/v1.1/contacts/<CONTACTID>/buyrent?api_key=<YOUR_API_KEY_HERE>' \
