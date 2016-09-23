@@ -7,11 +7,9 @@ def get_contacts(conf):
 
     url = conf['baseurl'] + '/contacts'
 
-    headers = {'Content-type': 'application/json'}
-
     payload = {'api_key':conf['api_key']}
 
-    r = requests.get(url, params=payload, headers=headers, auth=(conf['token'], ''))
+    r = requests.get(url, params=payload, auth=(conf['token'], ''))
 
     status = r.status_code
 
@@ -32,7 +30,7 @@ def add_contact(conf):
 
     url = conf['baseurl'] + '/contacts'
 
-    headers = {'Content-type': 'application/json'}
+    headers = {'Content-Type': 'application/json'}
 
     payload = {'api_key':conf['api_key']}
 
@@ -56,6 +54,8 @@ def add_contact(conf):
     print r.text
 
     return
+
+#------------------------------------------------------------
 
 try:
    api_key = sys.argv[1]
