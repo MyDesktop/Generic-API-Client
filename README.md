@@ -32,7 +32,9 @@ If the user has Two Factor Authentication enabled:
 * Make another `/login` call with the same username, and the entered 2FA PIN as the password
 * Assuming a correct PIN was entered, the user's *Access Token* will now be returned
 
-> Due to this flow, *currently* the User Based Authentication should only be used in instances where the user logs themselves in
+> Developers should **not** be storing user credentials during this method
+
+> Due to this flow, *currently* the User Based Authentication should only be used in instances where the user logs themselves in personally
 
 This token will remain valid until the user changes their password, in which case it will be invalidated and need to be reauthenticated.
 
