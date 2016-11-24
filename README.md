@@ -67,3 +67,11 @@ Date: `YYYY-MM-DD`
 DateTime: `YYYY-MM-DDThh:mm:ss`, `YYYY-MM-DD hh:mm:ss`
 
 Please note that all times are 24-hour.
+
+
+Tips and Tricks
+==================
+
+#### Creating a listing enquiry form?
+* Ensure a `property` is linked to the contact note
+* Add an `inspectiondate` to the contact note if you wish for the enquiry to appear on the Vendor Report
