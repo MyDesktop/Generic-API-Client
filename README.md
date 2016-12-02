@@ -1,7 +1,7 @@
 Generic-API-Client
 ==================
 
-Sample cURL commands, Python code and PHP code for connecting to MyDesktop's Generic API
+Sample cURL commands, Python, Perl and PHP code for connecting to MyDesktop's Generic API
 
 Only approved integration partners can access this API. To find out more, please email api@mydesktop.com.au.
 
