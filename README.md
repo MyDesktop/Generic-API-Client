@@ -68,6 +68,23 @@ DateTime: `YYYY-MM-DDThh:mm:ss`, `YYYY-MM-DD hh:mm:ss`
 
 Please note that all times are 24-hour.
 
+Rate Limiting
+==================
+
+Please note that rate-limiting applies to this API. Integrators can inspect their current rate-limit status by inspecting the `X-RateLimit-*` response headers from any API request.
+
+```
+X-RateLimit-Limit: 15000
+X-RateLimit-Remaining: 14295
+X-RateLimit-Reset: 1480639379
+```
+
+Because rate-limiting applies, we recommend that integrators **cache responses where appropriate**.
+
+Image URLs
+==================
+
+We recommend that integrators **do not hotlink** to image URLs present in API responses. The URLs are subject to change without notice. A local copy of each image should be fetched and stored by the integrator.
 
 Tips and Tricks
 ==================
