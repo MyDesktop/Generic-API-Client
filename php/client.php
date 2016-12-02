@@ -14,7 +14,7 @@ if (!$api_key || !$access_token) {
 // Get contacts
 $ch = curl_init($baseurl . '/contacts?api_key=' . $api_key);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Accept: application/json'));
 curl_setopt($ch, CURLOPT_USERPWD, $access_token . ":" . "");
 
 $result = curl_exec($ch);
