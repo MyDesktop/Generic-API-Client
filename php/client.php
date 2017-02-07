@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 
-$baseurl = 'https://integrations.mydesktop.com.au/api/v1.1';
+$baseurl = 'https://integrations.mydesktop.com.au/api/v1.2';
 
 $api_key = $argv[1];
 $access_token = $argv[2];

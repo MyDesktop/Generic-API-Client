@@ -92,3 +92,10 @@ Tips and Tricks
 #### Creating a listing enquiry form?
 * Ensure a `property` is linked to the contact note
 * Add an `inspectiondate` to the contact note if you wish for the enquiry to appear on the Vendor Report
+
+Changelog
+==================
+
+#### [1.2] - 2017-02-07
+* Change in the way contact-property relationships are described.
+* It is now possible to attach a property to a contact as either 'vendor', 'owner', 'pastowner', 'purchaser', 'pastpurchaser' or 'tenant'.
