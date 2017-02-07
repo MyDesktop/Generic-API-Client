@@ -112,3 +112,12 @@ curl -X POST 'https://integrations.mydesktop.com.au/api/v1.2/contacts/<CONTACTID
 curl -X DELETE 'https://integrations.mydesktop.com.au/api/v1.2/contacts/<CONTACTID>?api_key=<YOUR_API_KEY_HERE>' \
     -u '<YOUR_ACCESS_TOKEN>':''
 ```
+
+## Attach a property to a contact (as an owner):
+
+```
+curl -X POST 'https://integrations.mydesktop.com.au/api/v1.2/contacts/<CONTACTID>/properties?api_key=<YOUR_API_KEY_HERE>' \
+    -u '<YOUR_ACCESS_TOKEN>':'' \
+    -H "Content-Type: application/json" \
+    -d '{"property": {"id":<PROPERTYID>}, "type":"owner"}'
+```
