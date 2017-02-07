@@ -64,7 +64,7 @@ except:
    print "Usage: client.py <api_key> <access_token>"
    sys.exit()
 
-conf = dict(access_token=access_token, api_key=api_key, baseurl='https://integrations.mydesktop.com.au/api/v1.1')
+conf = dict(access_token=access_token, api_key=api_key, baseurl='https://integrations.mydesktop.com.au/api/v1.2')
 
 if not access_token:
    print "Invalid credentials"

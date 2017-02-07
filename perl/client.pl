@@ -4,7 +4,7 @@ use LWP::UserAgent;
 use HTTP::Request::Common;
 use JSON;
 
-my $baseurl = 'https://integrations.mydesktop.com.au/api/v1.1';
+my $baseurl = 'https://integrations.mydesktop.com.au/api/v1.2';
 my $host = 'integrations.mydesktop.com.au:443';
 
 my $api_key = $ARGV[0];
