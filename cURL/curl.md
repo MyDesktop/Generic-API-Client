@@ -121,3 +121,37 @@ curl -X POST 'https://integrations.mydesktop.com.au/api/v1.2/contacts/<CONTACTID
     -H "Content-Type: application/json" \
     -d '{"property": {"id":<PROPERTYID>}, "type":"owner"}'
 ```
+
+# Adding an image from your local directory
+```
+curl -X POST \
+  'https://integrations.mydesktop.com.au/api/v1.2/images?api_key=<APIKEY>' \
+  -H 'Authorization: Basic <AUTHTOKEN>' \
+  -H 'Cache-Control: no-cache' \
+  -H 'content-type: multipart/form-data' \
+  -F file=@"/Users/user1/Desktop/pics/user1.jpg"
+```
+
+# Adding an image from a link
+```
+curl -X POST \
+  'https://integrations.mydesktop.com.au:443/api/v1.2/images?api_key=API-KEY' \
+  -H 'authorization: Basic TOKEN' \
+  -H 'content-type: application/json' \
+  -d '{"url":"<imageurl>","hiresurl":"<imageurl>"}'
+
+curl -X PUT \
+  'https://integrations.mydesktop.com.au:443/api/v1.2/properties/<propertyid>?api_key=API-KEY' \
+  -H 'authorization: Basic TOKEN' \
+  -H 'content-type: application/json' \
+  -d '{"images":
+	[
+		{
+			"imageid":<imageid>,
+			"order":1
+			
+		}
+	]
+	
+}'
+```
