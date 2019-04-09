@@ -170,7 +170,7 @@ Now update the contact with that Suburb ID
 
 ```
 curl -X PUT \
-  'https://integrations.mydesktop.com.au/api/v1.2/contacts/80851763?api_key=<APIKEY>' \
+  'https://integrations.mydesktop.com.au/api/v1.2/contacts/<CONTACTID>?api_key=<APIKEY>' \
   -u '<YOUR_ACCESS_TOKEN>':'' \
   -H 'Content-Type: application/json' \
   -d '{"address": {"suburb": {"id": <SUBURB_ID>} } }'
