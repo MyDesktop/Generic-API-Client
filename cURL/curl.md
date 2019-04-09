@@ -126,8 +126,7 @@ curl -X POST 'https://integrations.mydesktop.com.au/api/v1.2/contacts/<CONTACTID
 ```
 curl -X POST \
   'https://integrations.mydesktop.com.au/api/v1.2/images?api_key=<APIKEY>' \
-  -H 'Authorization: Basic <AUTHTOKEN>' \
-  -H 'Cache-Control: no-cache' \
+  -u '<YOUR_ACCESS_TOKEN>':'' \
   -H 'content-type: multipart/form-data' \
   -F file=@"/Users/user1/Desktop/pics/user1.jpg"
 ```
@@ -135,14 +134,14 @@ curl -X POST \
 # Adding an image from a link
 ```
 curl -X POST \
-  'https://integrations.mydesktop.com.au:443/api/v1.2/images?api_key=API-KEY' \
-  -H 'authorization: Basic TOKEN' \
+  'https://integrations.mydesktop.com.au:443/api/v1.2/images?api_key=<APIKEY>' \
+  -u '<YOUR_ACCESS_TOKEN>':'' \
   -H 'content-type: application/json' \
   -d '{"url":"<imageurl>","hiresurl":"<imageurl>"}'
 
 curl -X PUT \
   'https://integrations.mydesktop.com.au:443/api/v1.2/properties/<propertyid>?api_key=API-KEY' \
-  -H 'authorization: Basic TOKEN' \
+  -u '<YOUR_ACCESS_TOKEN>':'' \
   -H 'content-type: application/json' \
   -d '{"images":
 	[
@@ -154,4 +153,25 @@ curl -X PUT \
 	]
 	
 }'
+```
+
+# Updating a contact's address/suburb
+
+First, find the suburb you want to update and note its `id`:
+
+```
+curl -X GET \
+  'https://integrations.mydesktop.com.au/api/v1.2/suburbs?api_key=<APIKEY>&name=<SUBURB_NAME>' \
+  -u '<YOUR_ACCESS_TOKEN>':'' \
+  -H 'Content-Type: application/json' \
+```
+
+Now update the contact with that Suburb ID
+
+```
+curl -X PUT \
+  'https://integrations.mydesktop.com.au/api/v1.2/contacts/80851763?api_key=<APIKEY>' \
+  -u '<YOUR_ACCESS_TOKEN>':'' \
+  -H 'Content-Type: application/json' \
+  -d '{"address": {"suburb": {"id": <SUBURB_ID>} } }'
 ```
