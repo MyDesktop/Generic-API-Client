@@ -86,6 +86,18 @@ Image URLs
 
 We recommend that integrators **do not hotlink** to image URLs present in API responses. The URLs are subject to change without notice. A local copy of each image should be fetched and stored by the integrator.
 
+
+Pagination
+==================
+
+The API is paginating the results. For the first page, it would only return the first list of the properties (eg. when calling
+the `/properties` endpoint) then you'll need to sync the rest (page=2 and so on, the next link is usually located at the bottom
+part of the result) in order to get all the properties details for an office.
+
+it is designed to reduce overhead as displaying loads of data at once can be caused the performance issue, and to ensure that
+the responses are easier to handle.
+
+
 Tips and Tricks
 ==================
 
